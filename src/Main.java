@@ -35,6 +35,18 @@ public class Main {
                         }
                     }
                     break;
+                case 3 :
+                    System.out.println("Enter the Search Query :");
+                    String searchQuery = scanner.next();
+                    List<Book> searchResults = library.searchBooks(searchQuery);
+
+                    if (searchResults.isEmpty()){
+                        System.out.println("No boos found !");
+                    }
+                    else {
+                        menu.showListOfBooks(searchResults)
+                    }
+                    break;
                     
             }
         }
