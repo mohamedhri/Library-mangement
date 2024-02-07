@@ -44,10 +44,14 @@ public class Main {
                         System.out.println("No boos found !");
                     }
                     else {
-                        menu.showListOfBooks(searchResults)
+                        menu.showListOfBooks(searchResults);
                     }
                     break;
-                    
+                case 4 :
+                    menu.showListOfBooks(library.books);
+                case 0 :
+                    System.out.println("Invalid choice , try again .");
+
             }
         }
     }
