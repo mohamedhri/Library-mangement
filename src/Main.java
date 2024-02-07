@@ -26,7 +26,16 @@ public class Main {
                     System.out.println("Book added successfully . ");
                     break;
                 case 2 :
-
+                    System.out.println("Enter the ISBN of the book you wanna remove :");
+                    String isbnToRemove = scanner.next();
+                    for (Book book : library.books){
+                        if(book.isbn.equals(isbnToRemove)){
+                            library.removeBook(book);
+                            System.out.println("You removed the book successfully");
+                        }
+                    }
+                    break;
+                    
             }
         }
     }
