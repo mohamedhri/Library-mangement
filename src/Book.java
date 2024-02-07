@@ -18,7 +18,9 @@ public class Book {
         this.isbn = isbn;
         this.publicationDate = publicationDate;
     }
-
+    public String getTitle() {
+        return title;
+    }
     }
 
 
