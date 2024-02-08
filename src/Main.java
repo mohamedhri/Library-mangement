@@ -26,16 +26,26 @@ public class Main {
                     System.out.println("Book added successfully . ");
                     break;
                 case 2 :
-                    System.out.println("Enter the ISBN of the book you wanna remove :");
-                    String isbnToRemove = scanner.next();
-                    for (Book book : library.books){
-                        if(book.isbn.equals(isbnToRemove)){
-                            library.removeBook(book);
-                            System.out.println("You removed the book successfully");
-                        }
-                    }
+                    System.out.print("Enter student name: ");
+                    String studentName = scanner.nextLine();
+                    System.out.print("Enter student address: ");
+                    String studentAddress = scanner.nextLine();
+                    System.out.print("Enter student ID: ");
+                    String studentId = scanner.next();
+
+                    Student newStudent = new Student(studentName, studentAddress, studentId);
+                    library.students.add(newStudent);
+
+                    System.out.println("Student added successfully!");
                     break;
                 case 3 :
+                    menu.showListOfBooks(library.books);
+                    break;
+                case 4:
+                    menu.showListOfStudents(library.students);
+                    break;
+
+                case 5 :
                     System.out.println("Enter the Search Query :");
                     String searchQuery = scanner.next();
                     List<Book> searchResults = library.searchBooks(searchQuery);
@@ -47,10 +57,17 @@ public class Main {
                         menu.showListOfBooks(searchResults);
                     }
                     break;
-                case 4 :
-                    menu.showListOfBooks(library.books);
+                case 6 :
+                    System.out.println("Enter the ISBN of the book you wanna remove :");
+                    String isbnToRemove = scanner.next();
+                    for (Book book : library.books){
+                        if(book.isbn.equals(isbnToRemove)){
+                            library.removeBook(book);
+                            System.out.println("You removed the book successfully");
+                        }
+                    }
                     break;
-                case 5 :
+                case 7 :
                     System.out.print("Enter ISBN of the book to borrow: ");
                     String isbnToBorrow = scanner.next();
                     /*
@@ -68,19 +85,6 @@ public class Main {
                             break;
                         }
                     }*/
-                    break;
-                case 6 :
-                    System.out.print("Enter student name: ");
-                    String studentName = scanner.nextLine();
-                    System.out.print("Enter student address: ");
-                    String studentAddress = scanner.nextLine();
-                    System.out.print("Enter student ID: ");
-                    String studentId = scanner.next();
-
-                    Student newStudent = new Student(studentName, studentAddress, studentId);
-                    library.students.add(newStudent);
-
-                    System.out.println("Student added successfully!");
                     break;
 
                 case 0 :
