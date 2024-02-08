@@ -7,12 +7,10 @@ public class Menu {
         System.out.println("***BOOK MANAGEMENT MENU***");
         System.out.println("--------------------------");
         System.out.println("    1. Add a book");
-        System.out.println("    2. Add a student");
-        System.out.println("    3. Show list of students");
-        System.out.println("    4. Show list of books");
-        System.out.println("    5. Search for books");
-        System.out.println("    6. Remove a book");
-        System.out.println("    7. Borrow a book");
+        System.out.println("    2. Show list of books");
+        System.out.println("    3. Search for books");
+        System.out.println("    4. Remove a book");
+        System.out.println("    5. Borrow a book");
         // Add more options as needed
         System.out.println("    0. Exit");
     }

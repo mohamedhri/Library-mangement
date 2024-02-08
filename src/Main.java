@@ -25,27 +25,13 @@ public class Main {
                     library.addBook(newBook);
                     System.out.println("Book added successfully . ");
                     break;
+
                 case 2 :
-                    System.out.print("Enter student name: ");
-                    String studentName = scanner.nextLine();
-                    System.out.print("Enter student address: ");
-                    String studentAddress = scanner.nextLine();
-                    System.out.print("Enter student ID: ");
-                    String studentId = scanner.next();
-
-                    Student newStudent = new Student(studentName, studentAddress, studentId);
-                    library.students.add(newStudent);
-
-                    System.out.println("Student added successfully!");
-                    break;
-                case 3 :
                     menu.showListOfBooks(library.books);
                     break;
-                case 4:
-                    menu.showListOfStudents(library.students);
-                    break;
 
-                case 5 :
+
+                case 3 :
                     System.out.println("Enter the Search Query :");
                     String searchQuery = scanner.next();
                     List<Book> searchResults = library.searchBooks(searchQuery);
@@ -57,7 +43,7 @@ public class Main {
                         menu.showListOfBooks(searchResults);
                     }
                     break;
-                case 6 :
+                case 4 :
                     System.out.println("Enter the ISBN of the book you wanna remove :");
                     String isbnToRemove = scanner.next();
                     for (Book book : library.books){
@@ -67,24 +53,49 @@ public class Main {
                         }
                     }
                     break;
-                case 7 :
+                case 5 :
                     System.out.print("Enter ISBN of the book to borrow: ");
                     String isbnToBorrow = scanner.next();
-                    /*
+
+                    Book bookToBorrow = null;
                     for (Book book : library.books) {
                         if (book.isbn.equals(isbnToBorrow)) {
-                            System.out.print("Enter student ID: ");
-                            String studentId = scanner.next();
-                            Student borrower = findStudentById(library.students, studentId);
-
-                            if (borrower != null) {
-                                borrower.borrowBook(book);
-                            } else {
-                                System.out.println("Student not found.");
-                            }
+                            bookToBorrow = book;
                             break;
                         }
-                    }*/
+                    }
+
+                    if (bookToBorrow != null) {
+                        System.out.print("Enter your name: ");
+                        scanner.nextLine(); // Consume the newline character
+                        String studentName = scanner.nextLine();
+                        System.out.print("Enter your address: ");
+                        String studentAddress = scanner.nextLine();
+                        System.out.print("Enter your ID: ");
+                        String studentId = scanner.next();
+
+                        Student borrower = null;
+                        for (Student student : library.students) {
+                            if (student.idNumber.equals(studentId)) {
+                                borrower = student;
+                                break;
+                            }
+                        }
+
+                        if (borrower == null) {
+                            borrower = new Student(studentName, studentAddress, studentId);
+                            library.students.add(borrower);
+                        }
+
+                        // Borrow the book
+                        borrower.borrowBook(bookToBorrow);
+
+                        bookToBorrow.currentBorrower = borrower;
+
+                        System.out.println("Book borrowed successfully!");
+                    } else {
+                        System.out.println("Book not found.");
+                    }
                     break;
 
                 case 0 :
