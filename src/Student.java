@@ -1,16 +1,17 @@
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.ArrayList;
+import java.util.List;
 public class Student {
     public String name;
     public String address ;
     public String idNumber ;
-    Public List<Book> borrowedBooks;
+    public List<Book> borrowedBooks;
 
     public Student (String name, String address, String idNumber){
         this.name = name;
-        this.adress = adress;
+        this.address = address;
         this.idNumber = idNumber;
         this.borrowedBooks =  new ArrayList<>();
     }

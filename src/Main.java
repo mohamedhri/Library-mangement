@@ -5,18 +5,18 @@ public class Main {
     public static void main (String [] args){
         Library library = new Library();
         Menu menu = new Menu();
-        Scanner scanner = new scanner(system.in);
+        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             menu.displayOptions();
-            int choice = menu.collectUserInput;
+            int choice = menu.collectUserInput();
 
             switch (choice) {
                 case 1 :
                     System.out.println("Enter the  book title : ");
-                    String title = scanner.nextln();
+                    String title = scanner.nextLine();
                     System.out.println("Enter the author name : ");
-                    String author = scanner.nextln();
+                    String author = scanner.nextLine();
                     System.out.println("Enter the isbn : ");
                     String isbn = scanner.next();
                     System.out.println("Enter the publication date : ");
@@ -53,6 +53,7 @@ public class Main {
                 case 5 :
                     System.out.print("Enter ISBN of the book to borrow: ");
                     String isbnToBorrow = scanner.next();
+                    /*
                     for (Book book : library.books) {
                         if (book.isbn.equals(isbnToBorrow)) {
                             System.out.print("Enter student ID: ");
@@ -66,8 +67,8 @@ public class Main {
                             }
                             break;
                         }
-                    }
-                    Break;
+                    }*/
+                    break;
                 case 6 :
                     System.out.print("Enter student name: ");
                     String studentName = scanner.nextLine();
