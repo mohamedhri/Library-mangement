@@ -11,6 +11,7 @@ public class Menu {
         System.out.println("    3. Search for books");
         System.out.println("    4. Remove a book");
         System.out.println("    5. Borrow a book");
+        System.out.println("    6. Modify Book Details");
         // Add more options as needed
         System.out.println("    0. Exit");
     }
@@ -42,4 +43,19 @@ public class Menu {
             System.out.println("------------------------");
         }
     }
+
+    public void modifyDetails(Book book) { Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter new title: ");
+        String newTitle = scanner.next();
+        System.out.print("Enter new author: ");
+        String newAuthor = scanner.next();
+        System.out.print("Enter new ISBN: ");
+        String newIsbn = scanner.next();
+        System.out.print("Enter new publication date: ");
+        String newPublicationDate = scanner.next();
+
+        book.modifyDetails(newTitle, newAuthor, newIsbn, newPublicationDate);
+        System.out.println("Book details modified successfully!");
+    }
+
 }

@@ -87,7 +87,6 @@ public class Main {
                             library.students.add(borrower);
                         }
 
-                        // Borrow the book
                         borrower.borrowBook(bookToBorrow);
 
                         bookToBorrow.currentBorrower = borrower;
@@ -95,6 +94,16 @@ public class Main {
                         System.out.println("Book borrowed successfully!");
                     } else {
                         System.out.println("Book not found.");
+                    }
+                    break;
+                case 6:
+                    System.out.print("Enter ISBN of the book to modify: ");
+                    String isbnToModify = scanner.next();
+
+                    for (Book book : library.books) {
+                        if (book.isbn.equals(isbnToModify)) {
+                            menu.modifyDetails(book);
+                        }
                     }
                     break;
 
