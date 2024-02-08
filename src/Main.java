@@ -49,8 +49,44 @@ public class Main {
                     break;
                 case 4 :
                     menu.showListOfBooks(library.books);
+                    break;
+                case 5 :
+                    System.out.print("Enter ISBN of the book to borrow: ");
+                    String isbnToBorrow = scanner.next();
+                    for (Book book : library.books) {
+                        if (book.isbn.equals(isbnToBorrow)) {
+                            System.out.print("Enter student ID: ");
+                            String studentId = scanner.next();
+                            Student borrower = findStudentById(library.students, studentId);
+
+                            if (borrower != null) {
+                                borrower.borrowBook(book);
+                            } else {
+                                System.out.println("Student not found.");
+                            }
+                            break;
+                        }
+                    }
+                    Break;
+                case 6 :
+                    System.out.print("Enter student name: ");
+                    String studentName = scanner.nextLine();
+                    System.out.print("Enter student address: ");
+                    String studentAddress = scanner.nextLine();
+                    System.out.print("Enter student ID: ");
+                    String studentId = scanner.next();
+
+                    Student newStudent = new Student(studentName, studentAddress, studentId);
+                    library.students.add(newStudent);
+
+                    System.out.println("Student added successfully!");
+                    break;
+
                 case 0 :
-                    System.out.println("Invalid choice , try again .");
+                    System.exit(0);
+                    break;
+                default :
+                    System.out.println("Invalid choice !!!!!");
 
             }
         }
