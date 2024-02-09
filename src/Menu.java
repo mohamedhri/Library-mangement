@@ -12,7 +12,7 @@ public class Menu {
         System.out.println("   4. Remove a book");
         System.out.println("   5. Borrow a book");
         System.out.println("   6. Modify Book Details");
-        System.out.println("   0. Exit");
+        System.out.println("    0. Exit");
     }
 
     public int collectUserInput() {

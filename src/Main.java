@@ -21,7 +21,7 @@ public class Main {
                     System.out.println("Enter the isbn : ");
                     String isbn = scanner.nextLine();
                     System.out.println("Enter the publication date : ");
-                    String publicationDate = scanner.next();
+                    String publicationDate = scanner.nextLine();
                     Book newBook = new Book(title , author , isbn , publicationDate);
                     library.addBook(newBook);
                     System.out.println("Book added successfully . ");
