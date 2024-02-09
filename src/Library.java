@@ -18,10 +18,10 @@ public class Library {
         books.remove(book);
     }
 
-    public List<Book> searchBooks(String query) {
+    public List<Book> searchBooksByISBN(String isbn) {
         List<Book> result = new ArrayList<>();
         for (Book book : books) {
-            if (book.getTitle().toLowerCase().contains(query.toLowerCase())) {
+            if (book.getIsbn().equals(isbn)) {
                 result.add(book);
             }
         }

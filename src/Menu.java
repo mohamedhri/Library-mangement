@@ -44,7 +44,7 @@ public class Menu {
         String newAuthor = scanner.next();
         System.out.print("Enter new ISBN: ");
         String newIsbn = scanner.next();
-        System.out.print("Enter new publication date: ");
+        System.out.print("Enter new publication date YYYY/MM/DD: ");
         String newPublicationDate = scanner.next();
 
         book.modifyDetails(newTitle, newAuthor, newIsbn, newPublicationDate);

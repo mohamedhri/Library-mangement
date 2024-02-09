@@ -20,7 +20,7 @@ public class Main {
                     String author = scanner.nextLine();
                     System.out.println("Enter the isbn : ");
                     String isbn = scanner.nextLine();
-                    System.out.println("Enter the publication date : ");
+                    System.out.println("Enter the publication date YYYY/MM/DD : ");
                     String publicationDate = scanner.nextLine();
                     Book newBook = new Book(title , author , isbn , publicationDate);
                     library.addBook(newBook);
@@ -33,14 +33,13 @@ public class Main {
 
 
                 case 3 :
-                    System.out.println("Enter the Search Query :");
-                    String searchQuery = scanner.next();
-                    List<Book> searchResults = library.searchBooks(searchQuery);
+                    System.out.println("Enter the ISBN to search for: ");
+                    String searchISBN = scanner.next();
+                    List<Book> searchResults = library.searchBooksByISBN(searchISBN);
 
-                    if (searchResults.isEmpty()){
-                        System.out.println("No booK found !");
-                    }
-                    else {
+                    if (searchResults.isEmpty()) {
+                        System.out.println("No book found!");
+                    } else {
                         menu.showListOfBooks(searchResults);
                     }
                     break;
@@ -68,7 +67,7 @@ public class Main {
 
                     if (bookToBorrow != null) {
                         System.out.print("Enter your name: ");
-                        scanner.nextLine(); // Consume the newline character
+                        scanner.nextLine();
                         String studentName = scanner.nextLine();
                         System.out.print("Enter your address: ");
                         String studentAddress = scanner.nextLine();
