@@ -25,9 +25,4 @@ public class Student {
         }
     }
 
-    public void returnBook(Book book) {
-        borrowedBooks.remove(book);
-        book.currentBorrower = null;
-        System.out.println(name + " returned the book: " + book.getTitle());
-    }
 }

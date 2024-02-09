@@ -13,12 +13,13 @@ public class Main {
 
             switch (choice) {
                 case 1 :
+
                     System.out.println("Enter the  book title : ");
                     String title = scanner.nextLine();
                     System.out.println("Enter the author name : ");
                     String author = scanner.nextLine();
                     System.out.println("Enter the isbn : ");
-                    String isbn = scanner.next();
+                    String isbn = scanner.nextLine();
                     System.out.println("Enter the publication date : ");
                     String publicationDate = scanner.next();
                     Book newBook = new Book(title , author , isbn , publicationDate);
@@ -37,7 +38,7 @@ public class Main {
                     List<Book> searchResults = library.searchBooks(searchQuery);
 
                     if (searchResults.isEmpty()){
-                        System.out.println("No boos found !");
+                        System.out.println("No booK found !");
                     }
                     else {
                         menu.showListOfBooks(searchResults);
